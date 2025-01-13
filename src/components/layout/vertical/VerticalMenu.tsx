@@ -93,27 +93,27 @@ const VerticalMenu = ({ scrollMenu }: { scrollMenu: (container: any, isPerfectSc
             </MenuItem>
           )}
 
-          {canView(['7']) && (
-             <SubMenu label='Users' icon={<i className='ri-group-line' />}>
-             <MenuItem href='/dashboard/users/new-user'>
-               New User
-             </MenuItem>
-             <MenuItem href='/dashboard/users'>
-               All Users
-             </MenuItem>
-           
-           </SubMenu>
-          )}
+         
 
 
 
 
 {canView(['4']) && (
          <MenuItem href='/dashboard/items' icon={<i className='ri-table-line' />}>
-         Appraised Data Bank
+         Central Data Bank
        </MenuItem>
 )}
 
+{canView(['4']) && (
+             <SubMenu label='Expression Extraction ' icon={<i className='ri-group-line' />}>
+             <MenuItem href='/dashboard/inspection-extraction'>
+               All Extracts
+             </MenuItem>
+             <MenuItem href='/dashboard/inspection-extraction/new-extract'>
+               New Extract
+             </MenuItem>
+           </SubMenu>
+          )}
 
 {canView(['4']) && (
         <MenuItem href='#' icon={<i className='ri-mac-line' />}>
@@ -127,11 +127,7 @@ const VerticalMenu = ({ scrollMenu }: { scrollMenu: (container: any, isPerfectSc
           </MenuItem>
 )}
 
-{canView(['4']) && (
-      <MenuItem href='/dashboard/expression-extraction' icon={<i className='ri-nurse-fill' />}>
-      Expression Extraction Sheet
-    </MenuItem>
-)}
+
 
 
 {canView(['7']) && (

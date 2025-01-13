@@ -3,12 +3,12 @@ import type { ReactElement } from 'react'
 
 // Next Imports
 import dynamic from 'next/dynamic'
-import Create from '@/views/users/create'
-import CreateUser from '@/views/users/create/EditProfile'
+import InspectionForm from '@/views/inspection-extraction/create/InspectionForm'
+
 
 
 const UsersPage = () => {
-  return <CreateUser />
+  return <InspectionForm />
 }
 
 export default UsersPage
