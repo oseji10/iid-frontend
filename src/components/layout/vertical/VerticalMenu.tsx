@@ -114,7 +114,17 @@ const VerticalMenu = ({ scrollMenu }: { scrollMenu: (container: any, isPerfectSc
              </MenuItem>
            </SubMenu>
           )}
+{canView(['4']) && (
+        <MenuItem href='/dashboard/companies' icon={<i className='ri-home-office-line' />}>
+        Companies
+      </MenuItem>
+)}
 
+{canView(['4']) && (
+        <MenuItem href='/dashboard/schedule-2' icon={<i className='ri-calendar-line' />}>
+        Schedule II
+      </MenuItem>
+)}
 {canView(['4']) && (
         <MenuItem href='#' icon={<i className='ri-mac-line' />}>
         Industrial Data
