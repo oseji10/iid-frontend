@@ -34,7 +34,7 @@ import axios from 'axios';
 type Company = {
   companyId: number;
   companyName: string;
-  natureOfBusiness: string;
+  fileNumber: string;
   companyAddress: string;
   companyCity: string;
   state: string;
@@ -205,7 +205,7 @@ const Companies = () => {
 
   const [formData, setFormData] = useState({
     companyName: '',
-    natureOfBusiness: '',
+    fileNumber: '',
     companyAddress: '',
     companyCity: '',
     state: '',
@@ -242,8 +242,9 @@ const Companies = () => {
   useEffect(() => {
     const fetchCompanies = async () => {
       try {
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_APP_URL}/companies`);
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_APP_URL}/company_data`);
         setCompanies(response.data);
+        console.log(response.data)
         setFilteredCompanies(response.data);
         setLoading(false);
       } catch (err) {
@@ -274,7 +275,7 @@ const Companies = () => {
     setSelectedCompany(company);
     setFormData({
       companyName: company.companyName || '',
-      natureOfBusiness: company.natureOfBusiness || '',
+      fileNumber: company.fileNumber || '',
       companyAddress: company.companyAddress || '',
       companyCity: company.companyCity || '',
       state: company.state || '',
@@ -411,7 +412,7 @@ const Companies = () => {
       setFilteredCompanies(response.data);
       setFormData({
         companyName: '',
-        natureOfBusiness: '',
+        fileNumber: '',
         companyAddress: '',
         companyCity: '',
         state: '',
@@ -967,7 +968,7 @@ const Companies = () => {
             <TableRow>
               <TableCell>ID</TableCell>
               <TableCell>Company Name</TableCell>
-              <TableCell>Nature of Business</TableCell>
+              <TableCell>File Number</TableCell>
               <TableCell>Status</TableCell>
               <TableCell>Actions</TableCell>
             </TableRow>
@@ -977,7 +978,7 @@ const Companies = () => {
               <TableRow key={company.companyId}>
                 <TableCell>{company.companyId}</TableCell>
                 <TableCell>{company.companyName}</TableCell>
-                <TableCell>{company.natureOfBusiness}</TableCell>
+                <TableCell>{company.fileNumber}</TableCell>
                 <TableCell>{company.status}</TableCell>
                 <TableCell>
                   <IconButton onClick={() => handleView(company)} color="primary">
@@ -987,7 +988,7 @@ const Companies = () => {
                     <Edit />
                   </IconButton>
 
-                  <IconButton
+                  {/* <IconButton
           component="a"
           href={`${process.env.NEXT_PUBLIC_APP_URL}/company/${company.companyId}/status-report`}
           target="_blank"
@@ -995,7 +996,7 @@ const Companies = () => {
           title="Download Status Report"
         >
           <PictureAsPdf />
-        </IconButton>
+        </IconButton> */}
 
                 </TableCell>
               </TableRow>

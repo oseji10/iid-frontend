@@ -137,6 +137,17 @@ const VerticalMenu = ({ scrollMenu }: { scrollMenu: (container: any, isPerfectSc
           </MenuItem>
 )}
 
+{canView(['4']) && (
+            <MenuItem href='#' icon={<i className='ri-file-chart-line' />}>
+            Reports
+          </MenuItem>
+)}
+
+{canView(['4']) && (
+            <MenuItem href='#' icon={<i className='ri-line-chart-line' />}>
+            Data Analytics
+          </MenuItem>
+)}
 
 
 
